@@ -1,16 +1,14 @@
 
-import time
-while True:
-    from datetime import datetime
-    now = datetime.now()  
-    print (now.month,now.day,now.year,now.hour,now.minute,now.second)
-    time.sleep(1)
-    break
+# import time
+# while True:
+#     from datetime import datetime
+#     now = datetime.now()  
+#     print (now.month,now.day,now.year,now.hour,now.minute,now.second)
+#     time.sleep(1)
 
 #boven is een digital time 
 #------------------------------------------------------------------#
 #Onderste is mijn code
-
 
 time_PM = 1
 time_AM = 12
