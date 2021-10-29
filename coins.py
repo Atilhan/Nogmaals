@@ -8,22 +8,34 @@ toPay = int(float(input('Amount to pay: '))* 100) #Variable ToPay is asking with
 paid = int(float(input('Paid amount: ')) * 100) #Variable paid is asking within a input the amount you've paid.
 change = paid - toPay #Variable change is telling us that it's towards the variable paid & subtract variable toPay from it (paid - toPay)
 
-if change > 0: # if variable "change" is greater than 0
-  coinValue = 500 # This variable has been given the value 500
+coin500 = 0
+coin300 = 0
+coin200 = 0
+coin100 = 0
+coin50 = 0
+coin20 = 0
+coin10 = 0
+coin5 = 0
+coin2 = 0
+coin1 = 0
+
+
+if change > 0: #if variable "change" is greater than 0
+  coinValue = 500 #This variable has been given the value 500
   
   while change > 0 and coinValue > 0: #While the variable change & coinValue are greater than 0
-    nrCoins = change // coinValue #Variable nrCoins is directing / telling us that variable change & coinValue has to be divided by // into whole numbers instead of a float
+    nrCoins = change // coinValue #
 
     if nrCoins > 0: #If the variable nrCoins is greater than 0
       print('return maximal ', nrCoins, ' coins of ', coinValue, ' cents!' ) #Printing the string 'return maximal' and adding to that the value of nrcoins & CoinValue.
-      nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return? ')) #This line of code is requesting how many coins you've returned by looking at CoinValue + the input you inserted 
-      change -= nrCoinsReturned * coinValue #
+      nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return? ')) #This line of code is requesting how many coins you've returned by looking at CoinValue + the input you inserted
+      change -= nrCoinsReturned * coinValue # nrCoinsReturned will be multiplied with coinValue & the answer will be cut off from variable change.
 
-# comment on code below: 
-#i've added varriables of multiple coin options of 500 down to 1 
+# comment on code below: Value's between 500 to 1 have been added, also variables of Coin500 until 1 have been added to mention
+# the value each variable gets and so I can mention the values of the variables in a print
     if coinValue == 500:
+      coinValue = 300
       coin500 = nrCoinsReturned
-      coinValue == 300
     elif coinValue == 300:
       coin300 = nrCoinsReturned
       coinValue = 200
@@ -43,21 +55,36 @@ if change > 0: # if variable "change" is greater than 0
       coin10 = nrCoinsReturned
       coinValue = 5
     elif coinValue == 5:
-      coin5 = nrCoinsReturned
+      coin2 = nrCoinsReturned
       coinValue = 2
     elif coinValue == 2:
-      coin2 = nrCoinsReturned
-      coinValue = 1
-    elif coinValue == 1:
       coin1 = nrCoinsReturned
+      coinValue = 1
     else:
       coinValue = 0
 
-if change > 0: # if the variable change is greater than 0, it has to print the amount of change not returned else it will print that you're  done & how much you returned (coins)
-
+if change > 0: #If change is greater than 0 , then it will be printed the following str + the int of change to str 
   print('Change not returned: ', str(change) + ' cents')
 else:
-
-  print("You're done. You've returned: ", str(nrCoins) + ' coin(s)')
-
+  if coin500 > 0:
+    print (coin500)
+  if coin300 > 0:
+    print (coin300)
+  if coin200 > 0:
+    print (coin200)
+  if coin100 > 0:
+    print (coin100)
+  if coin50 > 0:
+    print (coin50)
+  if coin20 > 0:
+    print (coin20)
+  if coin10 > 0:
+    print (coin10)
+  if coin5 > 0:
+    print (coin5)
+  if coin2 > 0:
+    print (coin2)
+  if coin1 > 0:
+    print (coin1)
+print('done')
 #-----------------------------------------------------------------------------------------------------------------
