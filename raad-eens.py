@@ -25,21 +25,23 @@ while game:
         number = randint(1,1000)
         print (number)
         kans_1 = 0
-        print(kans_2)
+        print("Highscore:", (kans_2))
 
-        if kans_2 == 20:
+        if kans_2 == 5:
             game = False
 
 
         while kans_1 < 10:
             kans_1 += 1
-            print ("Your current guessing chance:", (kans_1))
-            guess = input('Guess a number between 1 & 1000 : ')
+            print ("Your current guessing chance (You have 10 chances):", (kans_1))
+            guess = (int (input('Guess a number between 1 & 1000 : ')))
+            
             if guess =="Terminate":
                 print ('Game has been terminated')
                 clearScreen(0)
                 game = False 
                 kans_1 = 10
+
             elif int(guess) == number:
                 print("You've guessed right !\n")
                 kans_2 += 1
@@ -47,8 +49,28 @@ while game:
             else:
                 print("You've guessed wrong ! try again !\n")
                 time.sleep (0)
-            
-        kans_2 += 1
+
+
+
+            if guess > number and guess < number + 20:
+                print("You're close! only 20 difference lower between", (guess))
+            elif guess < number and guess > number - 20:
+                print("You're close ! only 20 difference higher between", (guess))
+            elif guess > number and guess < number + 50:
+                print("You're close! only 50 difference lower between", (guess))
+            elif guess < number and guess > number - 50:
+                print("You're close ! only 50 difference higher between", (guess))
+            elif guess > number:
+                print("You're way off, guess lower than" , (guess))
+            elif guess < number:
+                print("You're way off, guess higher than" , (guess))
+
+print("You total points are:", (kans_2))
+
+
+            #kans_2 += 1
+
+
 
             
 
